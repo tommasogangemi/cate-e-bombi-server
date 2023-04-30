@@ -1,7 +1,8 @@
-import express, { Express, Request, Response } from 'express'
-import dotenv from 'dotenv'
+import type { Express, Request, Response } from 'express'
 import { CLIENT_EMAIL, PRIVATE_KEY, PRIVATE_KEY_ID, decodeKey } from './keys'
 
+const express = require('express')
+const dotenv = require('dotenv')
 const google = require('googleapis')
 
 dotenv.config()
@@ -36,3 +37,6 @@ app.get('/token', async (req: Request, res: Response) => {
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`)
 })
+
+// Export the Express API
+module.exports = app

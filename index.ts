@@ -18,7 +18,7 @@ let jwtClient = new google.Auth.JWT({
 })
 
 const app: Express = express()
-const port = process.env.NODE_ENV === 'development' ? 5000 : ''
+const port = 5000
 
 app.use((req, res, next) => {
   res.append('Access-Control-Allow-Origin', ['*'])

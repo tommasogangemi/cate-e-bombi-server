@@ -1,12 +1,10 @@
-import type { Express } from 'express'
-
 const express = require('express')
 const dotenv = require('dotenv')
 const token = require('./routes/token')
 
 dotenv.config()
 
-const app: Express = express()
+const app = express()
 const port = 5000
 
 app.use('/token', token)

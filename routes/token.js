@@ -1,4 +1,3 @@
-import { Request, Response } from 'express'
 import { CLIENT_EMAIL, PRIVATE_KEY, PRIVATE_KEY_ID, decodeKey } from './../keys'
 
 const google = require('googleapis')
@@ -16,7 +15,7 @@ let jwtClient = new google.Auth.JWT({
   scopes: 'https://www.googleapis.com/auth/spreadsheets'
 })
 
-router.get('/', async (req: Request, res: Response) => {
+router.get('/', async (req, res) => {
   res.append('Access-Control-Allow-Origin', ['*'])
   res.append('Access-Control-Allow-Methods', 'GET')
   res.append('Access-Control-Allow-Headers', 'Content-Type')
